@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-weight: 700;
+  background-image: url('../../assets/macrame.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 1em 0 10em 0;
+  font-size: 18px;
+}
+
+.navbar__pages, .navbar__icons {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar__icons {
+  margin-top: 1.5em;
+}
+
+.navbar__items:hover {
+  color:cornflowerblue;
+}
+
+.navbar__categories {
+  background-color:transparent;
+  border: 0;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 1.07em;
+}
+
+.navbar__categoriesMenu {
+  display: flex;
+  flex-direction: column;
+  background-color:cornflowerblue;
+  padding: 0.8em;
+}
+
+.navbar__categoriesItems {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.navbar__categoriesItems:hover {
+  color: bisque;
+}

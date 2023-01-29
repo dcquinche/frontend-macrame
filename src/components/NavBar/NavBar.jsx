@@ -11,9 +11,9 @@ const NavBar = () => {
         <Dropdown>
           <Dropdown.Toggle className="navbar__items navbar__categories" variant="success" id="dropdown-basic">Categorías</Dropdown.Toggle>
           <Dropdown.Menu className="navbar__categoriesMenu">
+            <Dropdown.Item className="navbar__categoriesItems">Accesorios</Dropdown.Item>
             <Dropdown.Item className="navbar__categoriesItems">Atrapasueños</Dropdown.Item>
             <Dropdown.Item className="navbar__categoriesItems">Cojines</Dropdown.Item>
-            <Dropdown.Item className="navbar__categoriesItems">Collares</Dropdown.Item>
             <Dropdown.Item className="navbar__categoriesItems">Portamacetas</Dropdown.Item>
             <Dropdown.Item className="navbar__categoriesItems">Tapices</Dropdown.Item>
           </Dropdown.Menu>

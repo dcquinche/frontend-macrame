@@ -1,0 +1,20 @@
+.product {
+  justify-content: center;
+  text-align: center;
+  border-radius: solid 30px;
+  width: 250px;
+}
+
+.product__img {
+  height: 250px;
+  width: 250px;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.product:hover {
+  filter: opacity(0.6) drop-shadow(0 0 0 indianred);
+}
+
+.product__name {
+  color: indianred;
+}

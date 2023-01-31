@@ -1,0 +1,31 @@
+.footer {
+  display: flex;
+  background-image: url('../../assets/footer.jpg');
+  background-repeat: no-repeat;
+  filter: opacity(0.6) drop-shadow(0 0 0 rgb(85, 138, 85));
+  padding: 2em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer__logo {
+  font-size: 25px;
+  color: rgb(33, 47, 20);
+}
+
+.footer__socialmedia {
+  width: 70px;
+}
+
+.footer__socialmedia:hover {
+  filter: opacity(0.6) drop-shadow(0 0 0 rgb(113, 41, 61));
+}
+
+.footer__icons {
+  margin-top: 1em;
+  display: flex;
+  gap: 20px;
+  justify-items: center;
+  justify-content: center;
+}

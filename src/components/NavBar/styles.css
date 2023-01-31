@@ -15,10 +15,6 @@
   gap: 30px;
 }
 
-.navbar__icons {
-  margin-top: 1.5em;
-}
-
 .navbar__items:hover {
   color:cornflowerblue;
 }
@@ -29,7 +25,6 @@
   color: white;
   font-weight: 700;
   font-size: 18px;
-  margin-top: 1.07em;
 }
 
 .navbar__categoriesMenu {

@@ -1,0 +1,37 @@
+.productsPage {
+  margin: 4em 3em 4em 3em;
+  text-align: center;
+  justify-content: center;
+}
+
+.productsPage__list {
+  margin-top: 3em;
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.productsPage__buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.productsPage__category {
+  padding: 0.8em;
+  border-radius: 10px;
+  border: 0;
+  background-color: cadetblue;
+  color: white;
+  font-weight: 700;
+}
+
+.productsPage__category:hover {
+  background-color: cornflowerblue;
+}
+
+.productsPage__titleCategory {
+  margin-top: 0.4em;
+}

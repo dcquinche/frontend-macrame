@@ -1,29 +1,50 @@
 import './styles.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle, faCartShopping, faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { captureData } from '../../features/searchSlice';
+import { useDispatch } from 'react-redux';
+import { DropdownButton } from 'react-bootstrap';
 
 const NavBar = () => {
+  const [value, setValue]= useState('');
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const handleSelect= (event) => {
+    setValue(event)
+  }
+
   const handleClickCategory = () => {
-    navigate('/productos');
+    try {
+      dispatch(captureData(value));
+      navigate('/productos');
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  const handleClickHome = () => {
+    navigate('/');
   }
 
   return (
     <nav className="navbar">
       <section className="navbar__pages">
-        <Link to='/'><p className="navbar__items">Inicio</p></Link>
+        <p className="navbar__items" onClick={handleClickHome}>Inicio</p>
         <Dropdown>
-          <Dropdown.Toggle className="navbar__items navbar__categories" variant="success" id="dropdown-basic">Categorías</Dropdown.Toggle>
-          <Dropdown.Menu className="navbar__categoriesMenu">
-            <Dropdown.Item className="navbar__categoriesItems" onClick={handleClickCategory}>Accesorios</Dropdown.Item>
-            <Dropdown.Item className="navbar__categoriesItems" onClick={handleClickCategory}>Atrapasueños</Dropdown.Item>
-            <Dropdown.Item className="navbar__categoriesItems" onClick={handleClickCategory}>Cojines</Dropdown.Item>
-            <Dropdown.Item className="navbar__categoriesItems" onClick={handleClickCategory}>Portamacetas</Dropdown.Item>
-            <Dropdown.Item className="navbar__categoriesItems" onClick={handleClickCategory}>Tapices</Dropdown.Item>
-          </Dropdown.Menu>
+          <DropdownButton variant="success" id="dropdown-basic" className="navbar__items navbar__categories" title="Categoria" onSelect={handleSelect}>
+              <div className='navbar__categoriesMenu'>
+                <Dropdown.Item className="navbar__categoriesItems" eventKey="Accesorios">Accesorios</Dropdown.Item>
+                <Dropdown.Item className="navbar__categoriesItems" eventKey="Atrapasueños">Atrapasueños</Dropdown.Item>
+                <Dropdown.Item className="navbar__categoriesItems" eventKey="Cojines">Cojines</Dropdown.Item>
+                <Dropdown.Item className="navbar__categoriesItems" eventKey="Portamacetas">Portamacetas</Dropdown.Item>
+                <Dropdown.Item className="navbar__categoriesItems" eventKey="Tapices">Tapices</Dropdown.Item>
+                <FontAwesomeIcon className='navbar__glass' icon={faCircleArrowRight} onClick={handleClickCategory} />
+              </div>
+          </DropdownButton>
         </Dropdown>
       </section>
       <section className="navbar__icons">

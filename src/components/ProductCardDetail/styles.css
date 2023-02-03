@@ -1,12 +1,8 @@
 .productDetail {
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
   gap: 30px;
   background-color:aliceblue;
   padding: 3em;
   border-radius: 20px;
-  width: 80%;
 }
 
 .productDetail__text {

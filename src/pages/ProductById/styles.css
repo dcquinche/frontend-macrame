@@ -1,0 +1,10 @@
+.productByIdPage {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 4em 8em 4em 8em;
+}
+
+.productByIdPage__title {
+  margin-bottom: 1em;
+}

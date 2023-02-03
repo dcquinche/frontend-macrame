@@ -20,7 +20,7 @@
 }
 
 .navbar__categories {
-  background-color:transparent;
+  background-color: transparent;
   border: 0;
   color: white;
   font-weight: 700;
@@ -40,6 +40,12 @@
   font-size: 15px;
 }
 
-.navbar__categoriesItems:hover {
+.navbar__categoriesItems:focus {
   color: bisque;
+}
+
+.navbar__glass {
+  color: white;
+  margin-top: 0.3em;
+  margin-left: 4em;
 }

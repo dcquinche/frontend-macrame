@@ -33,14 +33,14 @@
 
 .gallery-images__figure{
   width: 100%;
-  max-height: 20em;
+  max-height: 30em;
   display: flex;
   align-items: center;
   background-color: rgba(0,0,0, .1);
 }
 
 .gallery-images__image{
-  max-height: 20em;
+  max-height: 30em;
   margin: auto;
   width: 100%;
 }
@@ -66,7 +66,7 @@
     color: white;
     font-size: 1.5em;
     padding: 1em;
-    height: 20rem;
+    height: 30rem;
   }
 
   .gallery-images__button-prev{
@@ -81,15 +81,9 @@
 
   .gallery-images__figure{
     width: 100%;
-    max-height: 20em;
+    max-height: 30em;
     display: flex;
     align-items: center;
     background-color: rgba(0,0,0, .1);
-  }
-
-  .gallery-images__image{
-    max-height: 20em;
-    margin: auto;
-    width: auto;
   }
 }

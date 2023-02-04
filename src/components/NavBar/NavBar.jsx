@@ -3,10 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useAuth0 } from "@auth0/auth0-react";
+import { useDispatch } from 'react-redux';
+import { createUser } from '../../features/usersSlice';
+import { useEffect } from 'react';
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+  const dispatch = useDispatch();
 
   const handleClickHome = () => {
     navigate('/');
@@ -16,6 +20,12 @@ const NavBar = () => {
     navigate('/productos');
   }
 
+  useEffect(()=>{
+    if(user) {
+      dispatch(createUser({email: user.email, image: user.picture, name: user.name}))
+    }
+  }, [user])
+
   return (
     <nav className="navbar">
       <section className="navbar__pages">
@@ -24,10 +34,12 @@ const NavBar = () => {
       </section>
       <section className="navbar__icons">
         <FontAwesomeIcon className="navbar__items" icon={faCartShopping} />
-        <FontAwesomeIcon className="navbar__items" icon={faUserCircle} />
         {
           isAuthenticated ? (
-              <button className='navbar__logButton' onClick={logout}>Logout</button>
+              <>
+                <FontAwesomeIcon className="navbar__items" icon={faUserCircle} />
+                <button className='navbar__logButton' onClick={logout}>Logout</button>
+              </>
           ) : (
             <button className='navbar__logButton' onClick={loginWithRedirect}>Login</button>
           )

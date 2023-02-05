@@ -1,0 +1,54 @@
+.userInfoForm {
+  width: 30%;
+}
+
+.userInfoForm__title {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.userInfoForm__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.userInfoForm__input {
+  justify-items: flex-end;
+}
+
+.userInfoForm__label {
+  display: flex;
+  flex-direction: column;
+}
+
+.userInfoForm__labels {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.userInfoForm__buttonEnv {
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userInfoForm__button {
+  padding: 0.7em;
+  color: white;
+  background-color: cadetblue;
+  border: 0;
+  font-weight: 700;
+}
+
+.userInfoForm__button:hover {
+  background-color: cornflowerblue;
+}
+
+@media (min-width: 768px) {
+  .userInfoForm__labels {
+    flex-direction: row;
+  }
+}

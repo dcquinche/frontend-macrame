@@ -1,3 +1,8 @@
 .profilePage {
   margin: 3em;
 }
+
+.profilePage__EditProfileTab {
+  display: flex;
+  gap: 50px;
+}

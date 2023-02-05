@@ -3,7 +3,6 @@ import { useState } from 'react';
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar';
 import UserInfo from '../../components/UserInfo/UserInfo';
 import UserInfoForm from '../../components/UserInfoForm/UserInfoForm';
-import UserPictureForm from '../../components/UserPictureForm/UserPictureForm';
 import { useSelector } from 'react-redux';
 
 const Profile = () => {
@@ -15,6 +14,7 @@ const Profile = () => {
     address,
     city,
     department,
+    _id,
    } = useSelector((state) => state.users.users);
 
   return (
@@ -37,15 +37,14 @@ const Profile = () => {
       {
         navBar === 'EditProfile' ? (
           <section className='profilePage__EditProfileTab'>
-            <UserPictureForm
-              image={image}
-            />
             <UserInfoForm
               name={name}
+              image={image}
               phone={phone}
               address={address}
               city={city}
               department={department}
+              id={_id}
             />
           </section>
         ) : null

@@ -1,10 +1,18 @@
-.userInfoForm {
-  width: 30%;
+.userInfoForm__title {
+  margin-bottom: 1.5em;
+  margin-top: 1em;
 }
 
-.userInfoForm__title {
-  margin-bottom: 1em;
-  margin-top: 1em;
+.userInfoForm__container {
+  display: flex;
+  gap: 50px;
+}
+
+.userPictureForm__image {
+  border-radius: 60em;
+  height: 150px;
+  width: 150px;
+  margin-bottom: 0.5em;
 }
 
 .userInfoForm__inputs {
@@ -45,6 +53,60 @@
 
 .userInfoForm__button:hover {
   background-color: cornflowerblue;
+}
+
+.userPictureForm__button--input {
+  position: relative;
+  display: inline-block;
+}
+
+.userPictureForm__button--input::before {
+  background-color:cadetblue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: 'Seleccionar'; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.userPictureForm__button--input input[type="file"] {
+  opacity: 0;
+  width: 100%;
+
+  padding: 0.5em;
+  display: inline-block;
+}
+
+.userPictureForm {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+}
+
+.userPictureForm__button {
+  margin-top: 0.5em;
+  padding: 0.5em;
+  color: white;
+  background-color: cadetblue;
+  border: 0;
+  font-weight: 500;
+  width: 100%;
+}
+
+.userPictureForm__button:hover {
+  background-color: cornflowerblue;
+}
+
+.userForm__container {
+  display: flex;
+  gap: 50px;
 }
 
 @media (min-width: 768px) {

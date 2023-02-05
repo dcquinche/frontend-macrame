@@ -25,6 +25,20 @@ export const createUser = createAsyncThunk('users/createUser', async (user) => {
   return data;
 });
 
+export const updateUser = createAsyncThunk('users/updateUser', async (user) => {
+  const options = {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(user),
+  };
+
+  const response = await fetch(`${BASE_URL}/api/users/${user._id}`, options);
+  const data = await response.json();
+  return data;
+});
+
 const usersSlice = createSlice({
   name: 'users',
   initialState,
@@ -33,6 +47,9 @@ const usersSlice = createSlice({
       state.users = action.payload;
     });
     builder.addCase(createUser.fulfilled, (state, action) => {
+      state.users = action.payload;
+    });
+    builder.addCase(updateUser.fulfilled, (state, action) => {
       state.users = action.payload;
     });
   }

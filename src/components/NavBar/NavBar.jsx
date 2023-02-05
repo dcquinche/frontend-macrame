@@ -20,6 +20,10 @@ const NavBar = () => {
     navigate('/productos');
   }
 
+  const handleClickProfile = () => {
+    navigate('/perfil');
+  }
+
   useEffect(()=>{
     if(user) {
       dispatch(createUser({email: user.email, image: user.picture, name: user.name}))
@@ -37,7 +41,7 @@ const NavBar = () => {
         {
           isAuthenticated ? (
               <>
-                <FontAwesomeIcon className="navbar__items" icon={faUserCircle} />
+                <FontAwesomeIcon className="navbar__items" icon={faUserCircle} onClick={handleClickProfile} />
                 <button className='navbar__logButton' onClick={logout}>Logout</button>
               </>
           ) : (

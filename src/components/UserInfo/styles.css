@@ -3,14 +3,26 @@
 }
 
 .userInfo__title {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   margin-top: 1em;
+}
+
+.userInfo__container {
+  display: flex;
+  gap: 40px;
+}
+
+.userInfo__image {
+  border-radius: 60em;
+  height: 150px;
+  width: 150px;
 }
 
 .userInfo__inputs {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  margin-top: 1.2em;
 }
 
 .userInfo__input {

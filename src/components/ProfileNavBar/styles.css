@@ -1,0 +1,20 @@
+.ProfileNavBar {
+  display: flex;
+  gap: 20px;
+}
+
+.ProfileNavBar__button {
+  padding: 0.8em;
+  background-color: transparent;
+  color:cadetblue;
+  border: 0;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.ProfileNavBar__button:hover {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+

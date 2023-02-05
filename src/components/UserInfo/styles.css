@@ -1,0 +1,55 @@
+.userInfo {
+  width: 30%;
+}
+
+.userInfo__title {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.userInfo__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.userInfo__input {
+  font-weight: bold;
+}
+
+.userInfo__label {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.userInfo__labels {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.userInfo__buttonEnv {
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userInfo__button {
+  padding: 0.7em;
+  color: white;
+  background-color: cadetblue;
+  border: 0;
+  font-weight: 700;
+}
+
+.userInfo__button:hover {
+  background-color: cornflowerblue;
+}
+
+@media (min-width: 768px) {
+  .userInfo__labels {
+    flex-direction: row;
+  }
+}

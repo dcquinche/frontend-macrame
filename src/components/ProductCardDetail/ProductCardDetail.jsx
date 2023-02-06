@@ -1,8 +1,14 @@
-import { useState } from 'react';
 import './styles.css';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { createCart } from '../../features/cartsSlice';
 
-const ProductCardDetail = ({image, name, price, description}) => {
+const ProductCardDetail = ({image, name, price, description, id}) => {
   const [count, setCount] = useState(1);
+  const {users} = useSelector((state) => state.users);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handlePlus = () => {
     setCount(count + 1)
@@ -12,6 +18,19 @@ const ProductCardDetail = ({image, name, price, description}) => {
     setCount(count - 1)
     if (count <= 1) {
       setCount(1)
+    }
+  }
+
+  const handleClickProducts = () => {
+    navigate('/productos');
+  }
+
+  const handleClickCart = async (event) => {
+    event.preventDefault();
+    try {
+      dispatch(createCart({ amount: count, product: id, user: users._id }));
+    } catch (error) {
+      throw new Error(error);
     }
   }
 
@@ -31,7 +50,8 @@ const ProductCardDetail = ({image, name, price, description}) => {
             <span className='productDetail__num'>{count}</span>
             <span className='productDetail__plus' onClick={handlePlus}>+</span>
           </div>
-          <button className='productDetail__button'>Agregar al carrito</button>
+          <button className='productDetail__button' onClick={handleClickCart}>Agregar al carrito</button>
+          <button className='productDetail__button' onClick={handleClickProducts}>Volver a Productos</button>
         </div>
       </section>
     </div>

@@ -3,12 +3,12 @@ import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDet
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProductById } from '../../features/productsSlice';
+import { getProductById } from '../../features/productSlice';
 
 const ProductById = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { products } = useSelector((state) => state.products);
+  const { product } = useSelector((state) => state.product);
 
   useEffect(() => {
     dispatch(getProductById(id));
@@ -19,12 +19,13 @@ const ProductById = () => {
       <h2 className='productByIdPage__title'>Detalle del Producto</h2>
       <section className='productByIdPage__card'>
         {
-          products ? (
+          product ? (
             <ProductCardDetail
-              name={products.name}
-              description={products.description}
-              price={products.price}
-              image={products.image}
+              name={product.name}
+              description={product.description}
+              price={product.price}
+              image={product.image}
+              id={product._id}
             />
           ) : null
         }

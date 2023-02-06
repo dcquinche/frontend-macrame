@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from '../../features/usersSlice';
 import { createImage } from '../../features/uploadsSlice';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const UserInfoForm = ({name, image, phone, address, city, department, id}) => {
   const [file, setFile] = useState([]);
@@ -29,11 +32,17 @@ const UserInfoForm = ({name, image, phone, address, city, department, id}) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try{
-      dispatch(updateUser({ ...form, image: uploads, _id: id }))
+      dispatch(updateUser({ ...form, image: uploads ? uploads : image, _id: id }))
     } catch(error) {
       throw new Error(error)
     }
   }
+
+  const showToastMessage = () => {
+    toast.success('Cambios Guardados !', {
+        position: toast.POSITION.BOTTOM_CENTER
+    });
+  };
 
   return (
     <div>
@@ -72,7 +81,8 @@ const UserInfoForm = ({name, image, phone, address, city, department, id}) => {
             </div>
           </section>
           <section className='userInfoForm__buttonEnv'>
-            <button className='userInfoForm__button' type='submit'>Confirmar Datos</button>
+            <button className='userInfoForm__button' type='submit' onClick={showToastMessage}>Confirmar Datos</button>
+            <ToastContainer />
           </section>
         </form>
       </section>

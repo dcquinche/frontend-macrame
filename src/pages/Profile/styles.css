@@ -1,8 +1,19 @@
 .profilePage {
-  margin: 3em;
+  margin: 3em 15em 3em 15em;
+  padding: 1em 2em 2em 2em;
+  border: 2px solid cadetblue;
+  border-radius: 10px;
+
 }
 
 .profilePage__EditProfileTab {
   display: flex;
   gap: 50px;
+}
+
+.profilePage__hr {
+  background-color: cadetblue;
+  width: 100%;
+  height: 2px;
+  border: 0;
 }

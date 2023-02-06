@@ -1,15 +1,17 @@
-.userInfo {
-  width: 30%;
+.userInfo__title {
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
-.userInfo__title {
-  margin-bottom: 1.5em;
-  margin-top: 1em;
+.userInfo__firstText {
+  text-align: center;
+  padding: 1.5em 2em 1.5em 2em;
 }
 
 .userInfo__container {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .userInfo__image {
@@ -22,7 +24,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.5em;
-  margin-top: 1.2em;
+  margin-top: 2em;
+  padding: 1.5em 2em 1.5em 2em;
 }
 
 .userInfo__input {
@@ -33,13 +36,6 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
-}
-
-.userInfo__labels {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 20px;
 }
 
 .userInfo__buttonEnv {
@@ -63,5 +59,10 @@
 @media (min-width: 768px) {
   .userInfo__labels {
     flex-direction: row;
+  }
+
+  .userInfo__container {
+    flex-direction: row;
+    gap: 20px;
   }
 }

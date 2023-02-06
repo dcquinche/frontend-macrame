@@ -15,11 +15,13 @@ const Profile = () => {
     city,
     department,
     _id,
+    email,
    } = useSelector((state) => state.users.users);
 
   return (
     <div className='profilePage'>
       <ProfileNavBar navBar={navBar} setNavBar={setNavBar} />
+      <hr className='profilePage__hr' />
       {
         navBar === 'Profile' ? (
           <section>
@@ -30,6 +32,7 @@ const Profile = () => {
               address={address}
               city={city}
               department={department}
+              email={email}
             />
           </section>
         ) : null

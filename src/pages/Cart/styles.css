@@ -1,0 +1,14 @@
+.cartPage {
+  margin: 1.5em 5em 1.5em 5em;
+  text-align: center;
+}
+
+.cartPage__title {
+  margin-bottom: 1.5em;
+}
+
+.cartPage__listProducts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

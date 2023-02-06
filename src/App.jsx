@@ -6,6 +6,7 @@ import Home from './pages/Home/Home';
 import Products from './pages/Products/Products';
 import ProductById from './pages/ProductById/ProductById';
 import Profile from './pages/Profile/Profile';
+import Cart from './pages/Cart/Cart';
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/productos' element={<Products />} />
         <Route path='/productos/:id' element={<ProductById />} />
+        <Route path='/carrito' element={<Cart />} />
         {
           isAuthenticated ? (
             <Route path='/perfil' element={<Profile />} />

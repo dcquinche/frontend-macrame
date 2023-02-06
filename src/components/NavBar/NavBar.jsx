@@ -20,6 +20,10 @@ const NavBar = () => {
     navigate('/productos');
   }
 
+  const handleClickCart = () => {
+    navigate('/carrito');
+  }
+
   const handleClickProfile = () => {
     navigate('/perfil');
   }
@@ -37,7 +41,7 @@ const NavBar = () => {
         <p className="navbar__items" onClick={handleClickProduct}>Productos</p>
       </section>
       <section className="navbar__icons">
-        <FontAwesomeIcon className="navbar__items" icon={faCartShopping} />
+        <FontAwesomeIcon className="navbar__items" icon={faCartShopping} onClick={handleClickCart} />
         {
           isAuthenticated ? (
               <>

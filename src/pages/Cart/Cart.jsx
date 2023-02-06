@@ -23,6 +23,7 @@ const Cart = () => {
             productName={cart.product.name}
             productPrice={cart.product.price}
             amount={cart.amount}
+            id={cart._id}
             key={cart._id}
           />
         ))}

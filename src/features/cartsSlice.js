@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -38,9 +38,8 @@ export const deleteCart = createAsyncThunk('carts/deleteCart', async (id) => {
     method: 'DELETE',
   };
 
-  const response = await fetch(`${BASE_URL}/api/carts/${id}`, options);
-  const data = await response.json();
-  return data;
+  await fetch(`${BASE_URL}/api/carts/${id}`, options);
+  return id;
 });
 
 export const getCartByUser = createAsyncThunk('carts/getCartByUser', async (cart) => {
@@ -64,10 +63,18 @@ const cartsSlice = createSlice({
       state.carts = action.payload;
     });
     builder.addCase(updateCart.fulfilled, (state, action) => {
-      state.carts = action.payload;
+      const { carts } = current(state);
+      const cartsUpdated = carts.map((cart) => {
+        if (cart._id === action.payload._id) {
+          return { ...cart, ...action.payload };
+        }
+        return cart;
+      });
+      state.carts = cartsUpdated;
     });
     builder.addCase(deleteCart.fulfilled, (state, action) => {
-      state.carts = action.payload;
+      const { carts } = current(state);
+      state.carts = carts.filter((cart) => cart._id !== action.payload);
     });
     builder.addCase(getCartByUser.fulfilled, (state, action) => {
       state.carts = action.payload;

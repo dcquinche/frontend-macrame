@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getAllCarts } from '../../features/cartsSlice';
 import { getAllProducts } from '../../features/productsSlice';
-
 import Gallery from '../../components/Gallery/Gallery';
 
 const Home = () => {

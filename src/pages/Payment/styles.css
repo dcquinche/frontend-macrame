@@ -1,5 +1,5 @@
 .paymentPage {
-  margin: 2em 5em 4em 0;
+  margin: 2em 3em 4em 2em;
 }
 
 .paymentPage__title {
@@ -10,4 +10,17 @@
 .paymentPage__container {
   display: flex;
   justify-content: center;
+  gap: 40px;
+}
+
+.paymentPage__button {
+  border: 0;
+  color: white;
+  padding: 0.7em;
+  background-color:indianred;
+  font-weight: 500;
+}
+
+.paymentPage__button:hover {
+  background-color: brown;
 }

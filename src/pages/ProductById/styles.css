@@ -2,9 +2,26 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin: 4em 8em 4em 8em;
+  margin: 2em 8em 4em 8em;
 }
 
 .productByIdPage__title {
   margin-bottom: 1em;
+}
+
+.productByIdPage__button {
+  border: 0;
+  color: white;
+  padding: 0.7em;
+  background-color:indianred;
+  font-weight: 500;
+}
+
+.productByIdPage__button:hover {
+  background-color: brown;
+}
+
+.productByIdPage__buttonEnv {
+  display: flex;
+  justify-content: flex-start;
 }

@@ -1,6 +1,5 @@
 import './styles.css';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createCart } from '../../features/cartSlice';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,7 +9,6 @@ const ProductCardDetail = ({image, name, price, description, id}) => {
   const [count, setCount] = useState(1);
   const {users} = useSelector((state) => state.users);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handlePlus = () => {
     setCount(count + 1)
@@ -21,10 +19,6 @@ const ProductCardDetail = ({image, name, price, description, id}) => {
     if (count <= 1) {
       setCount(1)
     }
-  }
-
-  const handleClickProducts = () => {
-    navigate('/productos');
   }
 
   const showToastMessage = () => {
@@ -61,7 +55,6 @@ const ProductCardDetail = ({image, name, price, description, id}) => {
           </div>
           <button className='productDetail__button' onClick={handleClickCart}>Agregar al Carrito</button>
           <ToastContainer />
-          <button className='productDetail__button' onClick={handleClickProducts}>Volver a Productos</button>
         </div>
       </section>
     </div>

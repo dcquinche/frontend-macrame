@@ -1,14 +1,32 @@
 .cartPage {
-  margin: 1.5em 5em 5em 5em;
+  margin: 5em 5em 4em 0;
   text-align: center;
 }
 
 .cartPage__title {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
+  margin-top: 1.5em;
 }
 
 .cartPage__listProducts {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.cartPage__container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .cartPage__container {
+    flex-direction: row;
+  }
+
+  .cartPage {
+    margin: 1.5em 5em 5em 5em;
+  }
 }

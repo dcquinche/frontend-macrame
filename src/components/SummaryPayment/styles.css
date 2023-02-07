@@ -1,0 +1,60 @@
+.summary {
+  text-align: left;
+}
+
+.summary__mainTitle {
+  margin-bottom: 1em;
+}
+
+.summary__title {
+  margin-top: 0.5em;
+  margin-bottom: 0.8em;
+}
+
+.summary__subtitlesValues {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.summary__subtitles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.8em;
+  margin-top: 0.5em;
+}
+
+.summary__subtitlesDeliver {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.summary__name {
+  margin-right: 8em;
+}
+
+.summary__amount {
+  margin-right: 4em;
+}
+
+.summary__button {
+  border: 0;
+  background-color: cadetblue;
+  color: white;
+  font-weight: 500;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.summary__button:hover {
+  background-color: cornflowerblue;
+}
+
+.summary__buttonEnv {
+  display: flex;
+  justify-content: flex-end;
+}

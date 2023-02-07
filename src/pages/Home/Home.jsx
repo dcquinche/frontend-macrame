@@ -1,7 +1,22 @@
 import './styles.css';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getAllCarts } from '../../features/cartsSlice';
+import { getAllProducts } from '../../features/productsSlice';
+
 import Gallery from '../../components/Gallery/Gallery';
 
 const Home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllProducts())
+  },[])
+
+  useEffect(() => {
+    dispatch(getAllCarts())
+  },[])
+
   return (
     <div className='homePage'>
       <Gallery images={[

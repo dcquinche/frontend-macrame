@@ -6,15 +6,8 @@ const initialState = {
   carts: []
 }
 
-export const createCart = createAsyncThunk('carts/createCart', async (cart) => {
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(cart),
-  };
-  const response = await fetch(`${BASE_URL}/api/carts`, options);
+export const getAllCarts = createAsyncThunk('carts/getAllCarts', async () => {
+  const response = await fetch(`${BASE_URL}/api/carts`);
   const data = await response.json();
   return data;
 });
@@ -59,9 +52,6 @@ const cartsSlice = createSlice({
   name: 'carts',
   initialState,
   extraReducers: (builder) => {
-    builder.addCase(createCart.fulfilled, (state, action) => {
-      state.carts = action.payload;
-    });
     builder.addCase(updateCart.fulfilled, (state, action) => {
       const { carts } = current(state);
       const cartsUpdated = carts.map((cart) => {
@@ -77,6 +67,9 @@ const cartsSlice = createSlice({
       state.carts = carts.filter((cart) => cart._id !== action.payload);
     });
     builder.addCase(getCartByUser.fulfilled, (state, action) => {
+      state.carts = action.payload;
+    });
+    builder.addCase(getAllCarts.fulfilled, (state, action) => {
       state.carts = action.payload;
     });
   }

@@ -2,7 +2,9 @@ import './styles.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { createCart } from '../../features/cartsSlice';
+import { createCart } from '../../features/cartSlice';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ProductCardDetail = ({image, name, price, description, id}) => {
   const [count, setCount] = useState(1);
@@ -25,10 +27,17 @@ const ProductCardDetail = ({image, name, price, description, id}) => {
     navigate('/productos');
   }
 
+  const showToastMessage = () => {
+    toast.success('Producto Agregado!', {
+        position: toast.POSITION.BOTTOM_CENTER
+    });
+  };
+
   const handleClickCart = async (event) => {
     event.preventDefault();
     try {
       dispatch(createCart({ amount: count, product: id, user: users._id }));
+      showToastMessage();
     } catch (error) {
       throw new Error(error);
     }
@@ -50,7 +59,8 @@ const ProductCardDetail = ({image, name, price, description, id}) => {
             <span className='productDetail__num'>{count}</span>
             <span className='productDetail__plus' onClick={handlePlus}>+</span>
           </div>
-          <button className='productDetail__button' onClick={handleClickCart}>Agregar al carrito</button>
+          <button className='productDetail__button' onClick={handleClickCart}>Agregar al Carrito</button>
+          <ToastContainer />
           <button className='productDetail__button' onClick={handleClickProducts}>Volver a Productos</button>
         </div>
       </section>

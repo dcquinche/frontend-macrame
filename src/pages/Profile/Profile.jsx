@@ -1,9 +1,10 @@
 import './styles.css';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar';
 import UserInfo from '../../components/UserInfo/UserInfo';
 import UserInfoForm from '../../components/UserInfoForm/UserInfoForm';
-import { useSelector } from 'react-redux';
+import ShoppingBag from '../../components/ShoppingBag/ShoppingBag';
 
 const Profile = () => {
   const [navBar, setNavBar] = useState('Profile');
@@ -16,6 +17,7 @@ const Profile = () => {
     department,
     _id,
     email,
+    shoppingBag,
    } = useSelector((state) => state.users.users);
 
   return (
@@ -33,6 +35,7 @@ const Profile = () => {
               city={city}
               department={department}
               email={email}
+              key={_id}
             />
           </section>
         ) : null
@@ -48,14 +51,26 @@ const Profile = () => {
               city={city}
               department={department}
               id={_id}
+              key={_id}
             />
           </section>
         ) : null
       }
+      <h3 className='profilePage__bagTitle'>Productos Adquiridos</h3>
       {
         navBar === 'ShoppingBag' ? (
-          <section>
-            Soy Shopping Bag
+          <section className='profilePage__bagList'>
+            {
+              shoppingBag.map((cart) => (
+                <ShoppingBag
+                  productImage={cart.product.image}
+                  productName={cart.product.name}
+                  productPrice={cart.product.price}
+                  amount={cart.amount}
+                  key={cart._id}
+                />
+              ))
+            }
           </section>
         ) : null
       }

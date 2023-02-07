@@ -1,16 +1,29 @@
 import './styles.css';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { captureData } from '../../features/saveSlice';
+import { useDispatch } from 'react-redux';
 
 const SummaryPayment = ({carts}) => {
   const [total, setTotal] = useState(0);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect(() => {
     let subTotal = 5000;
     carts.forEach(cart => {
       subTotal = subTotal + (cart.product.price * cart.amount);
       setTotal(subTotal);
     });
   })
+
+  useEffect(() => {
+    dispatch(captureData(total));
+  }, [total])
+
+  const handleClickPay = () => {
+    navigate('/pago');
+  }
 
   return (
     <div className='summary'>
@@ -31,7 +44,7 @@ const SummaryPayment = ({carts}) => {
           ))
         }
       <hr />
-      <h4 className='summary__title'>Envio</h4>
+      <h4 className='summary__title'>Envío</h4>
       <section className='summary__subtitlesDeliver'>
       <p>A Nivel Nacional</p>
       <p>{5000}</p>
@@ -42,7 +55,7 @@ const SummaryPayment = ({carts}) => {
         <h4 className='summary__title'>{total}</h4>
       </section>
       <section className='summary__buttonEnv'>
-        <button className='summary__button'>Pagar</button>
+        <button className='summary__button' onClick={handleClickPay}>Pagar</button>
       </section>
     </div>
   )

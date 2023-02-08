@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+const BASE_URL = 'https://backend-macrame-production.up.railway.app';
 
 const initialState = {
   products: [],

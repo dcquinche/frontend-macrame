@@ -2,7 +2,7 @@ import './styles.css';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import UserFormPayment from '../../components/UserFormPayment/UserFormPayment';
-import PaymentCard from '../../components/PaymentCard/PaymentCard';
+import PaymentWompi from '../../components/PaymentWompi/PaymentWompi';
 
 const Payment = () => {
   const navigate = useNavigate();
@@ -13,7 +13,9 @@ const Payment = () => {
     city,
     department,
     _id,
+    email,
    } = useSelector((state) => state.users.users);
+   const {total, orderNum} = useSelector((state) => state.save.save);
 
    const handleClickCart = () => {
     navigate('/carrito');
@@ -24,7 +26,7 @@ const Payment = () => {
       <section className='paymentPage__buttonEnv'>
         <button className='paymentPage__button' onClick={handleClickCart}>Volver al Carrito</button>
       </section>
-      <h2 className='paymentPage__title'>Pago de Productos</h2>
+      <h2 className='paymentPage__title'>Proceso de Pago</h2>
       <section className='paymentPage__container'>
         <UserFormPayment
           name={name}
@@ -35,9 +37,12 @@ const Payment = () => {
           id={_id}
           key={_id}
         />
-        <PaymentCard
-          id={_id}
-          key={_id}
+        <PaymentWompi
+          totalPrice={`${total}00`}
+          order={orderNum}
+          name={name}
+          phone={phone}
+          email={email}
         />
       </section>
     </div>

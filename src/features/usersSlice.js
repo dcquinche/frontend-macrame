@@ -6,12 +6,6 @@ const initialState = {
   users: []
 }
 
-export const getUserById = createAsyncThunk('users/getUserById', async (id) => {
-  const response = await fetch(`${BASE_URL}/api/users/${id}`);
-  const data = await response.json();
-  return data;
-});
-
 export const createUser = createAsyncThunk('users/createUser', async (user) => {
   const options = {
     method: 'POST',
@@ -43,9 +37,6 @@ const usersSlice = createSlice({
   name: 'users',
   initialState,
   extraReducers: (builder) => {
-    builder.addCase(getUserById.fulfilled, (state, action) => {
-      state.users = action.payload;
-    });
     builder.addCase(createUser.fulfilled, (state, action) => {
       state.users = action.payload;
     });

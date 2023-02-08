@@ -4,6 +4,7 @@ import productReducer from '../features/productSlice';
 import usersReducer from '../features/usersSlice';
 import cartsReducer from '../features/cartsSlice';
 import cartReducer from '../features/cartSlice';
+import paymentReducer from '../features/paymentSlice';
 import uploadsReducer from '../features/uploadsSlice';
 import saveReducer from '../features/saveSlice';
 
@@ -14,6 +15,7 @@ const store = configureStore({
     users: usersReducer,
     carts: cartsReducer,
     cart: cartReducer,
+    payment: paymentReducer,
     uploads: uploadsReducer,
     save: saveReducer,
   },

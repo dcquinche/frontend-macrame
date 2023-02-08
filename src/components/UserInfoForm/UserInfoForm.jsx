@@ -49,7 +49,7 @@ const UserInfoForm = ({name, image, phone, address, city, department, id}) => {
       <h3 className='userInfoForm__title'>Información de Contacto y Envío</h3>
       <section className='userInfoForm__container'>
         <form className='userPictureForm'>
-          <img className="userPictureForm__image" alt="profile" src={image} />
+          <img className="userPictureForm__image" alt="profile" src={uploads ? uploads : image} />
           <div className='userPictureForm__button--input'>
             <input name='image' type='file' accept="image/*" onChange={handleChangeImage} />
           </div>

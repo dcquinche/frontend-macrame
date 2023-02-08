@@ -1,13 +1,18 @@
 import './styles.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { captureData } from '../../features/saveSlice';
 import { useDispatch } from 'react-redux';
+import { captureData } from '../../features/saveSlice';
+import { updateUser } from '../../features/usersSlice';
+import { createPayment } from '../../features/paymentSlice';
+import { faker } from '@faker-js/faker';
 
-const SummaryPayment = ({carts}) => {
+const SummaryPayment = ({carts, users}) => {
   const [total, setTotal] = useState(0);
+  const [orderNum, setOrderNum] = useState(faker.datatype.number().toString());
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
 
   useEffect(() => {
     let subTotal = 5000;
@@ -18,11 +23,18 @@ const SummaryPayment = ({carts}) => {
   })
 
   useEffect(() => {
-    dispatch(captureData(total));
+    dispatch(captureData({total: total, orderNum: orderNum}));
   }, [total])
 
-  const handleClickPay = () => {
-    navigate('/pago');
+  const handleClickPay = (event) => {
+    event.preventDefault();
+    try{
+      dispatch(updateUser({ shoppingBag: carts, _id: users._id }));
+      dispatch(createPayment({email: users.email, name: users.name, orderNum: orderNum}));
+      navigate('/pago');
+    } catch(error) {
+      throw new Error(error)
+    }
   }
 
   return (

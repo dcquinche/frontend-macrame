@@ -31,7 +31,11 @@ const Cart = () => {
           ))}
         </section>
         <section>
-          <SummaryPayment carts={carts} />
+          <SummaryPayment
+            carts={carts}
+            users={users}
+            key={users._id}
+          />
         </section>
       </section>
     </div>

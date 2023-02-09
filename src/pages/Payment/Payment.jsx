@@ -34,7 +34,7 @@ const Payment = () => {
           address={address}
           city={city}
           department={department}
-          totalPrice={`${total}00`}
+          totalPrice={total}
           order={orderNum}
           id={_id}
           key={_id}

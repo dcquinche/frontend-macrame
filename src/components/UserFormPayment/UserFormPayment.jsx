@@ -22,7 +22,7 @@ const UserFormPayment = ({email, name, phone, address, city, department, order, 
     event.preventDefault();
     try{
       dispatch(updateUser({ ...form, shoppingBag: carts, _id: id }));
-      dispatch(createPayment({email: email, name: name, orderNum: order}));
+      dispatch(createPayment({email: email, name: name, orderNum: order, totalPrice: totalPrice, user: id}));
       showToastMessage();
     } catch(error) {
       throw new Error(error)
@@ -62,7 +62,7 @@ const UserFormPayment = ({email, name, phone, address, city, department, order, 
             <button className='userInfoForm__button' type='submit'>Confirmar Datos</button>
             <ToastContainer />
             <PaymentWompi
-              totalPrice={totalPrice}
+              totalPrice={`${totalPrice}00`} //add cents
               order={order}
               name={name}
               phone={phone}

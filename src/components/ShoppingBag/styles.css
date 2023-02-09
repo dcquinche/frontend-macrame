@@ -8,3 +8,14 @@
   gap: 70px;
   flex-wrap: wrap;
 }
+
+.shoppingBag__paymentInfo {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 2em;
+}
+
+.shoppingBag__text {
+  font-weight: 700;
+  margin-left: 1em;
+}

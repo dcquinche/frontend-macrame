@@ -28,7 +28,7 @@
   font-weight: 700;
 }
 
-.productsPage__category:hover {
+.productsPage__category:focus {
   background-color: cornflowerblue;
 }
 

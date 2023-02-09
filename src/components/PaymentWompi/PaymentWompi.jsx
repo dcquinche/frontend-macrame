@@ -7,7 +7,7 @@ const PaymentWompi = ({totalPrice, order, name, phone, email}) => {
       <input type="hidden" name="currency" value="COP" />
       <input type="hidden" name="amount-in-cents" value={totalPrice} />
       <input type="hidden" name="reference" value={order} />
-      <input type="hidden" name="redirect-url" value="http://localhost:3000/" />
+      <input type="hidden" name="redirect-url" value="https://frontend-macrame.vercel.app/" />
       <input type="hidden" name="customer-data:email" value={email} />
       <input type="hidden" name="customer-data:full-name" value={name} />
       <input type="hidden" name="customer-data:phone-number" value={phone} />

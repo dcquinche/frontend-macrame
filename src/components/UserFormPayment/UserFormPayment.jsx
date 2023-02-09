@@ -1,29 +1,33 @@
 import './styles.css';
 import useForm from '../../hooks/useForm';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from '../../features/usersSlice';
+import { createPayment } from '../../features/paymentSlice';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import PaymentWompi from '../PaymentWompi/PaymentWompi';
 
 const UserFormPayment = ({email, name, phone, address, city, department, order, totalPrice, id}) => {
   const { form, handleChange } = useForm({});
+  const { carts } = useSelector((state) => state.carts);
   const dispatch = useDispatch();
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try{
-      dispatch(updateUser({ ...form, _id: id }))
-    } catch(error) {
-      throw new Error(error)
-    }
-  }
 
   const showToastMessage = () => {
     toast.success('Cambios Guardados !', {
         position: toast.POSITION.BOTTOM_CENTER
     });
   };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try{
+      dispatch(updateUser({ ...form, shoppingBag: carts, _id: id }));
+      dispatch(createPayment({email: email, name: name, orderNum: order}));
+      showToastMessage();
+    } catch(error) {
+      throw new Error(error)
+    }
+  }
 
   return (
     <div>
@@ -55,7 +59,7 @@ const UserFormPayment = ({email, name, phone, address, city, department, order, 
             </div>
           </section>
           <section className='userInfoForm__buttonEnv'>
-            <button className='userInfoForm__button' type='submit' onClick={showToastMessage}>Confirmar Datos</button>
+            <button className='userInfoForm__button' type='submit'>Confirmar Datos</button>
             <ToastContainer />
             <PaymentWompi
               totalPrice={totalPrice}

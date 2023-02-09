@@ -33,7 +33,6 @@ const Cart = () => {
         <section>
           <SummaryPayment
             carts={carts}
-            users={users}
             key={users._id}
           />
         </section>

@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { captureData } from '../../features/saveSlice';
-import { updateUser } from '../../features/usersSlice';
-import { createPayment } from '../../features/paymentSlice';
 import { faker } from '@faker-js/faker';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 
-const SummaryPayment = ({carts, users}) => {
+const SummaryPayment = ({carts}) => {
   const [total, setTotal] = useState(0);
   const [orderNum, setOrderNum] = useState(faker.datatype.number().toString());
   const navigate = useNavigate();
@@ -26,15 +26,8 @@ const SummaryPayment = ({carts, users}) => {
     dispatch(captureData({total: total, orderNum: orderNum}));
   }, [total])
 
-  const handleClickPay = (event) => {
-    event.preventDefault();
-    try{
-      dispatch(updateUser({ shoppingBag: carts, _id: users._id }));
-      dispatch(createPayment({email: users.email, name: users.name, orderNum: orderNum}));
+  const handleClickGoToPay = () => {
       navigate('/pago');
-    } catch(error) {
-      throw new Error(error)
-    }
   }
 
   return (
@@ -69,7 +62,7 @@ const SummaryPayment = ({carts, users}) => {
         <h4 className='summary__title'>{total}</h4>
       </section>
       <section className='summary__buttonEnv'>
-        <button className='summary__button' onClick={handleClickPay}>Pagar</button>
+        <button className='summary__button' onClick={handleClickGoToPay}>Continuar <FontAwesomeIcon className='summary_icon' icon={faArrowCircleRight}/></button>
       </section>
     </div>
   )

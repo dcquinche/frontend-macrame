@@ -62,3 +62,7 @@
 .summary__table {
   width: 60%;
 }
+
+.summary_icon {
+  margin: 0 0 0 0.5em;
+}

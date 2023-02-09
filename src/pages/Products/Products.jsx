@@ -26,7 +26,7 @@ const Products = () => {
     setSearch('Cojines');
   }
   const handleClick5 = () => {
-    setSearch('Accesorios');
+    setSearch('Otros');
   }
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const Products = () => {
         <button className='productsPage__category' onClick={handleClick2}>Atrapasueños</button>
         <button className='productsPage__category' onClick={handleClick3}>Portamacetas</button>
         <button className='productsPage__category' onClick={handleClick4}>Cojines</button>
-        <button className='productsPage__category' onClick={handleClick5}>Accesorios</button>
+        <button className='productsPage__category' onClick={handleClick5}>Otros</button>
       </section>
       <section className='productsPage__list'>
         {results.map((product) => (

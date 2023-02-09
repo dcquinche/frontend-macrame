@@ -1,3 +1,5 @@
+import './styles.css';
+
 const PaymentWompi = ({totalPrice, order, name, phone, email}) => {
   return (
     <form action="https://checkout.wompi.co/p/" method="GET">
@@ -9,7 +11,7 @@ const PaymentWompi = ({totalPrice, order, name, phone, email}) => {
       <input type="hidden" name="customer-data:email" value={email} />
       <input type="hidden" name="customer-data:full-name" value={name} />
       <input type="hidden" name="customer-data:phone-number" value={phone} />
-      <button type="submit">Pagar con Wompi</button>
+      <button type="submit" className="paymentWompi_button">Pagar con Wompi</button>
     </form>
   )
 }

@@ -1,34 +1,11 @@
-.paymentCard {
-  padding: 1em;
-}
-
-.paymentCard__title {
-  margin-bottom: 0.5em;
-}
-
-.paymentCard__input {
-  margin-bottom: 0.5em;
-}
-
-.paymentCard__data {
-  display: flex;
-  gap: 12px;
-}
-
-.paymentCard__buttonEnv {
-  margin-top: 1em;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.paymentCard__button {
+.paymentWompi_button {
+  padding: 0.7em;
   color: white;
   background-color: cadetblue;
-  font-weight: 500;
   border: 0;
-  padding: 0.7em;
+  font-weight: 500;
 }
 
-.paymentCard__button:hover {
+.paymentWompi_button:hover {
   background-color: cornflowerblue;
 }

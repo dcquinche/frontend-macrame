@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux';
 import { updateUser } from '../../features/usersSlice';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import PaymentWompi from '../PaymentWompi/PaymentWompi';
 
-
-const UserFormPayment = ({name, phone, address, city, department, id}) => {
+const UserFormPayment = ({email, name, phone, address, city, department, order, totalPrice, id}) => {
   const { form, handleChange } = useForm({});
   const dispatch = useDispatch();
 
@@ -57,6 +57,13 @@ const UserFormPayment = ({name, phone, address, city, department, id}) => {
           <section className='userInfoForm__buttonEnv'>
             <button className='userInfoForm__button' type='submit' onClick={showToastMessage}>Confirmar Datos</button>
             <ToastContainer />
+            <PaymentWompi
+              totalPrice={totalPrice}
+              order={order}
+              name={name}
+              phone={phone}
+              email={email}
+            />
           </section>
         </form>
       </section>

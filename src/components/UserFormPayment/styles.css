@@ -32,9 +32,10 @@
 }
 
 .userInfoForm__buttonEnv {
-  margin-top: 1em;
+  margin-top: 2em;
   display: flex;
   justify-content: flex-end;
+  gap: 8px;
 }
 
 .userInfoForm__button {

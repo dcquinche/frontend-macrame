@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createCart } from '../../features/cartSlice';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const ProductCardDetail = ({image, name, price, description, id}) => {
   const [count, setCount] = useState(1);
   const {users} = useSelector((state) => state.users);
   const dispatch = useDispatch();
+  const {loginWithRedirect, isAuthenticated} = useAuth0();
 
   const handlePlus = () => {
     setCount(count + 1)
@@ -30,8 +32,12 @@ const ProductCardDetail = ({image, name, price, description, id}) => {
   const handleClickCart = async (event) => {
     event.preventDefault();
     try {
-      dispatch(createCart({ amount: count, product: id, user: users._id }));
-      showToastMessage();
+      if(isAuthenticated) {
+        dispatch(createCart({ amount: count, product: id, user: users._id }));
+        showToastMessage();
+      } else {
+        loginWithRedirect();
+      }
     } catch (error) {
       throw new Error(error);
     }

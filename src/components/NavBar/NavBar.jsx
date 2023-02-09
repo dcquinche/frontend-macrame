@@ -41,10 +41,10 @@ const NavBar = () => {
         <p className="navbar__items" onClick={handleClickProduct}>Productos</p>
       </section>
       <section className="navbar__icons">
-        <FontAwesomeIcon className="navbar__items" icon={faCartShopping} onClick={handleClickCart} />
         {
           isAuthenticated ? (
               <>
+                <FontAwesomeIcon className="navbar__items" icon={faCartShopping} onClick={handleClickCart} />
                 <FontAwesomeIcon className="navbar__items" icon={faUserCircle} onClick={handleClickProfile} />
                 <button className='navbar__logButton' onClick={logout}>Logout</button>
               </>

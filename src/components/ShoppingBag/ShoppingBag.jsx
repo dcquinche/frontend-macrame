@@ -1,13 +1,22 @@
 import './styles.css';
+import ShoppingProduct from '../ShoppingProduct/ShoppingProduct';
 
-const ShoppingBag = ({productImage, productName, productPrice, amount}) => {
+const ShoppingBag = ({products}) => {
   return (
-    <div className='bag'>
-      <img className='bag__img' alt='productImage' src={productImage} />
-      <section className='bag__text'>
-        <p className='bag__description'>{productName}</p>
-        <p>Precio: <span className='bag__description'>{productPrice} COP</span></p>
-        <p>Cantidad: <span className='bag__description'>{amount}</span></p>
+    <div>
+      <h3 className='shoppingBag__title'>Productos Adquiridos</h3>
+      <section className='shoppingBag__list'>
+        {
+          products.map((cart) => (
+            <ShoppingProduct
+              productImage={cart.product.image}
+              productName={cart.product.name}
+              productPrice={cart.product.price}
+              amount={cart.amount}
+              key={cart._id}
+            />
+          ))
+        }
       </section>
     </div>
   )

@@ -1,22 +1,10 @@
-.bag {
+.shoppingBag__title {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.shoppingBag__list {
   display: flex;
-  gap: 10px;
-  padding: 1em;
-  width: 350px;
-}
-
-.bag__img {
-  width: 80px;
-  height: 80px;
-}
-
-.bag__text {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  gap: 5px;
-}
-
-.bag__description {
-  font-weight: 700;
+  gap: 70px;
+  flex-wrap: wrap;
 }

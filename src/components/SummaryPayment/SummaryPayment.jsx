@@ -49,7 +49,9 @@ const SummaryPayment = ({carts, users}) => {
         {
           carts.map((cart) => (
             <section className='summary__subtitlesValues'>
-              <p className='summary__name'>{cart.product.name}</p>
+              <div className='summary__table'>
+                <p className='summary__name'>{cart.product.name}</p>
+              </div>
               <p className='summary__amount'>{cart.amount}</p>
               <p>{cart.product.price * cart.amount}</p>
             </section>

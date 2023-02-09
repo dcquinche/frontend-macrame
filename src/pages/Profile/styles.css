@@ -17,14 +17,3 @@
   height: 2px;
   border: 0;
 }
-
-.profilePage__bagTitle {
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-.profilePage__bagList {
-  display: flex;
-  gap: 70px;
-  flex-wrap: wrap;
-}

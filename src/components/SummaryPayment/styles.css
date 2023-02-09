@@ -58,3 +58,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.summary__table {
+  width: 60%;
+}

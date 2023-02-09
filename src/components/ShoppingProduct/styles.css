@@ -1,0 +1,22 @@
+.shoppingProduct {
+  display: flex;
+  gap: 10px;
+  padding: 1em;
+  width: 350px;
+}
+
+.shoppingProduct__img {
+  width: 80px;
+  height: 80px;
+}
+
+.shoppingProduct__text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 5px;
+}
+
+.shoppingProduct__description {
+  font-weight: 700;
+}

@@ -56,21 +56,13 @@ const Profile = () => {
           </section>
         ) : null
       }
-      <h3 className='profilePage__bagTitle'>Productos Adquiridos</h3>
       {
         navBar === 'ShoppingBag' ? (
-          <section className='profilePage__bagList'>
-            {
-              shoppingBag.map((cart) => (
-                <ShoppingBag
-                  productImage={cart.product.image}
-                  productName={cart.product.name}
-                  productPrice={cart.product.price}
-                  amount={cart.amount}
-                  key={cart._id}
-                />
-              ))
-            }
+          <section>
+            <ShoppingBag
+              products={shoppingBag}
+              key={_id}
+            />
           </section>
         ) : null
       }

@@ -13,7 +13,7 @@ const UserFormPayment = ({email, name, phone, address, city, department, order, 
   const dispatch = useDispatch();
 
   const showToastMessage = () => {
-    toast.success('Cambios Guardados !', {
+    toast.success('¡Datos Confirmados!', {
         position: toast.POSITION.BOTTOM_CENTER
     });
   };

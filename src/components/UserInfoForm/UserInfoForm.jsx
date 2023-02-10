@@ -39,7 +39,7 @@ const UserInfoForm = ({name, image, phone, address, city, department, id}) => {
   }
 
   const showToastMessage = () => {
-    toast.success('Cambios Guardados !', {
+    toast.success('¡Cambios Guardados!', {
         position: toast.POSITION.BOTTOM_CENTER
     });
   };

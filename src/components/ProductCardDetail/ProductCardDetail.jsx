@@ -24,7 +24,7 @@ const ProductCardDetail = ({image, name, price, description, id}) => {
   }
 
   const showToastMessage = () => {
-    toast.success('Producto Agregado!', {
+    toast.success('¡Producto Agregado!', {
         position: toast.POSITION.BOTTOM_CENTER
     });
   };

@@ -1,7 +1,9 @@
 .productsPage {
   margin: 4em 3em 4em 3em;
+}
+
+.productsPage__title {
   text-align: center;
-  justify-content: center;
 }
 
 .productsPage__list {
@@ -16,6 +18,7 @@
   display: flex;
   gap: 20px;
   justify-content: center;
+  text-align: left;
   margin-top: 2em;
 }
 
@@ -34,4 +37,8 @@
 
 .productsPage__titleCategory {
   margin-top: 0.4em;
+}
+
+.productPage__icon {
+  margin-left: 0.5em;
 }

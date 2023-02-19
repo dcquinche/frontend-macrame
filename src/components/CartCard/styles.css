@@ -43,6 +43,6 @@
   color: brown;
 }
 
-input[type='number']{
+.cart__editAmount{
   width: 35px;
 }

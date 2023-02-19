@@ -67,7 +67,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  content: 'Seleccionar'; /* testo por defecto */
+  content: 'Seleccionar';
   position: absolute;
   left: 0;
   right: 0;

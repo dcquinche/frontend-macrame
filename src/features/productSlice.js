@@ -12,11 +12,27 @@ export const getProductById = createAsyncThunk('products/getProductById', async 
   return data;
 });
 
+export const createProduct = createAsyncThunk('products/createProduct', async (product) => {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(product),
+  };
+  const response = await fetch(`${BASE_URL}/api/products`, options);
+  const data = await response.json();
+  return data;
+});
+
 const productSlice = createSlice({
   name: 'product',
   initialState,
   extraReducers: (builder) => {
     builder.addCase(getProductById.fulfilled, (state, action) => {
+      state.product = action.payload;
+    });
+    builder.addCase(createProduct.fulfilled, (state, action) => {
       state.product = action.payload;
     });
   }

@@ -47,7 +47,7 @@ const CartCard = ({productImage, productName, productPrice, amount, id}) => {
               </>
             ) : (
               <>
-                <p>Cantidad: <span className='cart__description'><input type='number' name='amount' defaultValue={amount} onChange={handleChange} /></span></p>
+                <p>Cantidad: <span className='cart__description'><input className='cart__editAmount' type='number' name='amount' defaultValue={amount} onChange={handleChange} /></span></p>
                 <FontAwesomeIcon className='cart__iconEdit' icon={faSave} size='xs' onClick={handleClickSave}/>
               </>
             )

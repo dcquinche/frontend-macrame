@@ -1,0 +1,82 @@
+.productForm {
+ width: 350px;
+ margin-bottom: 1em;
+}
+
+.productForm__title {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.productForm__input {
+  width: 100%;
+}
+
+.productForm__inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productForm__category {
+  width: 45%;
+}
+
+.productForm__figure {
+  margin-top: 0.8em;
+}
+
+.productForm__buttons {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.productForm__button {
+  padding: 0.7em;
+  color: white;
+  background-color: cadetblue;
+  border: 0;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.productForm__button:hover {
+  background-color: cornflowerblue;
+}
+
+.productForm__button--upload {
+  width: 100%;
+  padding: 0.5em;
+  color: white;
+  background-color: rgb(247, 167, 107);
+  border: 0;
+  font-size: 14px;
+}
+
+.productForm__input--img {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.productForm__input--img::before {
+  background-color:darksalmon;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: 'Seleccionar';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 14px;
+}
+
+.productForm__input--img input[type="file"] {
+  opacity: 0;
+  width: 100%;
+  padding: 0.5em;
+  display: inline-block;
+}

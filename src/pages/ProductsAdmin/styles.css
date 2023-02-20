@@ -1,0 +1,32 @@
+.productsAdminPage {
+  margin: 2em 3em 3em 3em;
+}
+
+.productsAdminPage__title {
+  text-align: center;
+}
+
+.productsAdminPage__list {
+  margin-top: 3em;
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.productsAdminPage__button {
+  border: 0;
+  color: white;
+  padding: 0.7em;
+  background-color:indianred;
+  font-weight: 500;
+}
+
+.productsAdminPage__button:hover {
+  background-color: brown;
+}
+
+.productsAdminPage__buttonEnv {
+  display: flex;
+  justify-content: flex-end;
+}

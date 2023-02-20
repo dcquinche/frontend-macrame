@@ -1,0 +1,49 @@
+.productAdmin {
+  border-radius: solid 30px;
+  width: 250px;
+  text-decoration: none;
+}
+
+.productAdmin__img {
+  height: 250px;
+  width: 250px;
+  border-radius: 20px 20px 20px 20px;
+  margin-bottom: 0.5em;
+}
+
+.productAdmin__name {
+  color: indianred;
+  text-align: center;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+.productAdmin__description {
+  display: flex;
+  text-align: justify;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+.productAdmin__icons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.8em;
+  color: indianred;
+}
+
+.productAdmin__icon {
+  margin-left: 0.5em;
+}
+
+.productAdmin__icon:hover {
+  filter: opacity(0.6) drop-shadow(0 0 0 rgb(87, 84, 245));
+}
+
+.productAdmin__price {
+  width: 70%;
+}
+
+.productAdmin__strong {
+  margin-right: 1.6em;
+}

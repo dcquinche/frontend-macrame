@@ -8,6 +8,7 @@ import Profile from './pages/Profile/Profile';
 import Cart from './pages/Cart/Cart';
 import Payment from './pages/Payment/Payment';
 import ProductRegistration from './pages/ProductRegistration/ProductRegistration';
+import ProductsAdmin from './pages/ProductsAdmin/ProductsAdmin';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
         <Route path='/carrito' element={<Cart />} />
         <Route path='/perfil' element={<Profile />} />
         <Route path='/pago' element={<Payment />} />
-        <Route path='/registro-producto' element={<ProductRegistration />} />
+        <Route path='/registro-productos' element={<ProductRegistration />} />
+        <Route path='/gestion-productos' element={<ProductsAdmin />} />
       </Routes>
       <Footer />
     </div>

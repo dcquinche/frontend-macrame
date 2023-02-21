@@ -44,8 +44,8 @@ const NavBar = () => {
         {
           isAuthenticated ? (
               <>
-                <FontAwesomeIcon className="navbar__items" icon={faCartShopping} onClick={handleClickCart} />
-                <FontAwesomeIcon className="navbar__items" icon={faUserCircle} onClick={handleClickProfile} />
+                <FontAwesomeIcon className="navbar__items" icon={faCartShopping} title='Carrito de Compras' onClick={handleClickCart} />
+                <FontAwesomeIcon className="navbar__items" icon={faUserCircle} title='Perfil' onClick={handleClickProfile} />
                 <button className='navbar__logButton' onClick={logout}>Logout</button>
               </>
           ) : (

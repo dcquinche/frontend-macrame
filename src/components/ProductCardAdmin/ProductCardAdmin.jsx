@@ -46,8 +46,8 @@ const ProductCardAdmin = ({name, image, price, description, id}) => {
             <p className='productAdmin__description'>{description}</p>
             <p className='productAdmin__price'><strong>Precio:</strong> {price} pesos</p>
             <section className='productAdmin__icons'>
-              <FontAwesomeIcon className='productAdmin__icon' icon={faPenToSquare} onClick={handleClickEdit}/>
-              <FontAwesomeIcon className='productAdmin__icon' icon={faTrashCan} onClick={handleClickDelete}/>
+              <FontAwesomeIcon className='productAdmin__icon' icon={faPenToSquare} title='Editar' onClick={handleClickEdit}/>
+              <FontAwesomeIcon className='productAdmin__icon' icon={faTrashCan} title='Eliminar' onClick={handleClickDelete}/>
             </section>
           </>
         ) : (
@@ -58,8 +58,8 @@ const ProductCardAdmin = ({name, image, price, description, id}) => {
             <strong className='productAdmin__strong'>Precio:</strong>
             <input className='productAdmin__price' type='number' name='price' defaultValue={price} onChange={handleChange} />
             <section className='productAdmin__icons'>
-              <FontAwesomeIcon className='productAdmin__icon' icon={faSave} onClick={handleClickSave}/>
-              <FontAwesomeIcon className='productAdmin__icon' icon={faXmarkSquare} onClick={handleClickExit}/>
+              <FontAwesomeIcon className='productAdmin__icon' icon={faSave} title='Guardar' onClick={handleClickSave}/>
+              <FontAwesomeIcon className='productAdmin__icon' icon={faXmarkSquare} title='Cerrar' onClick={handleClickExit}/>
             </section>
           </>
         )

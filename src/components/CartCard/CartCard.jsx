@@ -43,18 +43,18 @@ const CartCard = ({productImage, productName, productPrice, amount, id}) => {
             edit === false ? (
               <>
                 <p>Cantidad: <span className='cart__description'>{amount}</span></p>
-                <FontAwesomeIcon className='cart__iconEdit' icon={faPenToSquare} size='xs' onClick={handleClickEdit}/>
+                <FontAwesomeIcon className='cart__iconEdit' icon={faPenToSquare} size='xs' title='Editar' onClick={handleClickEdit}/>
               </>
             ) : (
               <>
                 <p>Cantidad: <span className='cart__description'><input className='cart__editAmount' type='number' name='amount' defaultValue={amount} onChange={handleChange} /></span></p>
-                <FontAwesomeIcon className='cart__iconEdit' icon={faSave} size='xs' onClick={handleClickSave}/>
+                <FontAwesomeIcon className='cart__iconEdit' icon={faSave} size='xs' title='Guardar' onClick={handleClickSave}/>
               </>
             )
           }
 
         </section>
-        <FontAwesomeIcon className='cart__iconDelete' icon={faTrashCan} size='xs' onClick={handleClickDelete}/>
+        <FontAwesomeIcon className='cart__iconDelete' icon={faTrashCan} size='xs' title='Eliminar' onClick={handleClickDelete}/>
       </section>
     </div>
   )

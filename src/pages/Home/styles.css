@@ -1,5 +1,5 @@
 .homePage {
-  margin: 2em 5em 5em 5em;
+  margin: 3em 3em 5em 3em;
 }
 
 .homePage__listOffers {
@@ -15,4 +15,10 @@
   font-size: 35px;
   font-weight: 700;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .homePage {
+    margin: 3em 5em 5em 5em;
+  }
 }

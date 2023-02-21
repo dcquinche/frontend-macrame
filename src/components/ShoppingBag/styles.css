@@ -5,7 +5,7 @@
 
 .shoppingBag__list {
   display: flex;
-  gap: 70px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 

@@ -2,12 +2,12 @@
   display: flex;
   background-image: url('../../assets/footer.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
   filter: opacity(0.6) drop-shadow(0 0 0 rgb(85, 138, 85));
   padding: 2em;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-size: cover;
 }
 
 .footer__logo {

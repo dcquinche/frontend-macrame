@@ -85,14 +85,13 @@
 .userPictureForm {
   display: flex;
   flex-direction: column;
-  width: 20%;
   justify-content: center;
   align-items: center;
-  padding: 2em;
+  padding: 1.5em;
 }
 
 .userInfoForm {
-  padding: 2em;
+  padding: 1.5em;
 }
 
 .userPictureForm__button {
@@ -121,5 +120,9 @@
   .userInfoForm__container {
     flex-direction: row;
     gap: 50px;
+  }
+
+  .userPictureForm {
+    width: 20%;
   }
 }

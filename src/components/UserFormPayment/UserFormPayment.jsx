@@ -58,7 +58,7 @@ const UserFormPayment = ({email, name, phone, address, city, department, order, 
               </div>
             </div>
           </section>
-          <section className='userInfoForm__buttonEnv'>
+          <section className='userInfoFormPayment__buttonEnv'>
             <button className='userInfoForm__button' type='submit'>Confirmar Datos</button>
             <ToastContainer />
             <PaymentWompi

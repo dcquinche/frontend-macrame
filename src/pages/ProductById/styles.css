@@ -2,7 +2,7 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin: 2em 8em 4em 8em;
+  margin: 2em 2em 3em 2em;
 }
 
 .productByIdPage__title {
@@ -24,4 +24,17 @@
 .productByIdPage__buttonEnv {
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 768px) {
+  .productByIdPage {
+    margin: 2em 4em 3em 4em;
+  }
+}
+
+@media (min-width: 1440px) {
+  .productByIdPage {
+    margin: 2em 8em 3em 8em;
+  }
 }

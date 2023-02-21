@@ -1,5 +1,6 @@
 .summary {
   text-align: left;
+  width: 320px;
 }
 
 .summary__mainTitle {
@@ -34,7 +35,7 @@
 }
 
 .summary__name {
-  margin-right: 8em;
+  margin-right: 4em;
 }
 
 .summary__amount {
@@ -65,4 +66,14 @@
 
 .summary_icon {
   margin: 0 0 0 0.5em;
+}
+
+@media (min-width: 1440px) {
+  .summary__name {
+    margin-right: 8em;
+  }
+
+  .summary {
+    width: 400px;
+  }
 }

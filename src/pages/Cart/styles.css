@@ -1,6 +1,10 @@
 .cartPage {
-  margin: 5em 5em 4em 0;
+  margin: 2em 2em 3em 2em;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .cartPage__title {
@@ -21,7 +25,7 @@
   justify-content: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .cartPage__container {
     flex-direction: row;
   }

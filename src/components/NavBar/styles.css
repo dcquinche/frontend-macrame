@@ -5,7 +5,7 @@
   font-weight: 700;
   background-image: url('../../assets/macrame.png');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   padding: 1em 0 10em 0;
   font-size: 18px;
 }

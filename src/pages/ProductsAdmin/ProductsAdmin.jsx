@@ -43,7 +43,7 @@ const ProductsAdmin = () => {
       <h2 className='productsAdminPage__title'>Gestión de Productos</h2>
       <section className="productsAdminPage__filter">
         <p className='productAdminPage__filterName'>Filtro por Nombre: </p>
-        <input className='productsAdminPage__input' value={search} type="text" name="name" size='40' onChange={handleChange} />
+        <input className='productsAdminPage__input' value={search} type="text" name="name" size='35' onChange={handleChange} />
       </section>
       <section className='productsAdminPage__list'>
         {results.map((product) => (

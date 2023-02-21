@@ -7,12 +7,12 @@ import { createImage } from '../../features/uploadsSlice';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 
-
 const UserInfoForm = ({name, image, phone, address, city, department, id}) => {
   const [file, setFile] = useState([]);
   const { form, handleChange } = useForm({});
-  const dispatch = useDispatch();
   const { uploads } = useSelector((state) => state.uploads);
+  const dispatch = useDispatch();
+
 
   const handleChangeImage = ({ target }) => {
     const { files } = target;

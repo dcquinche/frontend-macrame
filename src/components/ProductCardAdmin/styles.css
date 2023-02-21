@@ -8,7 +8,6 @@
   height: 250px;
   width: 250px;
   border-radius: 20px 20px 20px 20px;
-  margin-bottom: 0.5em;
 }
 
 .productAdmin__name {
@@ -23,6 +22,10 @@
   text-align: justify;
   margin-bottom: 0.5em;
   width: 100%;
+}
+
+.productAdmin__strong--description {
+  margin-right: 0.5em;
 }
 
 .productAdmin__icons {
@@ -41,9 +44,59 @@
 }
 
 .productAdmin__price {
-  width: 70%;
+  width: 60%;
+  margin-bottom: 0.5em;
 }
 
-.productAdmin__strong {
-  margin-right: 1.6em;
+.productAdmin__strong--price {
+  margin-right: 3.1em;
+}
+
+.productAdmin__category {
+  width: 60%;
+}
+
+.productAdmin__strong--category {
+  margin-right: 1.5em;
+}
+
+.productAdmin__input--img {
+  position: relative;
+  display: inline-block;
+}
+
+.productAdmin__input--img::before {
+  background-color:darksalmon;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: 'Seleccionar Imagen';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 14px;
+}
+
+.productAdmin__input--img input[type="file"] {
+  opacity: 0;
+  width: 100%;
+  padding: 0.5em;
+  display: inline-block;
+}
+
+.productAdmin__button--upload {
+  width: 70%;
+  padding: 0.5em;
+  color: white;
+  background-color: rgb(247, 167, 107);
+  border: 0;
+  font-size: 14px;
+}
+
+.productAdmin__buttons {
+  margin-bottom: 0.5em;
+  display: flex;
 }

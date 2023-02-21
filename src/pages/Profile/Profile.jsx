@@ -18,11 +18,12 @@ const Profile = () => {
     _id,
     email,
     shoppingBag,
+    role,
    } = useSelector((state) => state.users.users);
 
   return (
     <div className='profilePage'>
-      <ProfileNavBar navBar={navBar} setNavBar={setNavBar} />
+      <ProfileNavBar navBar={navBar} setNavBar={setNavBar} role={role} />
       <hr className='profilePage__hr' />
       {
         navBar === 'Profile' ? (

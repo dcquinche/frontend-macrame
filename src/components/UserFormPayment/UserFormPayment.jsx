@@ -2,7 +2,7 @@ import './styles.css';
 import useForm from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from '../../features/usersSlice';
-import { createPayment } from '../../features/paymentSlice';
+import { createOrder } from '../../features/orderSlice';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import PaymentWompi from '../PaymentWompi/PaymentWompi';
@@ -21,8 +21,8 @@ const UserFormPayment = ({email, name, phone, address, city, department, order, 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try{
-      dispatch(updateUser({ ...form, shoppingBag: carts, _id: id }));
-      dispatch(createPayment({email: email, name: name, orderNum: order, totalPrice: totalPrice, user: id}));
+      dispatch(updateUser({ ...form, _id: id }));
+      dispatch(createOrder({ email: email, name: name, orderNum: order, totalPrice: totalPrice, shoppingBag: carts, user: id }));
       showToastMessage();
     } catch(error) {
       throw new Error(error)

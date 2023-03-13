@@ -1,6 +1,7 @@
 import './styles.css';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getOrdersByUser } from '../../features/orderSlice';
 import ProfileNavBar from '../../components/ProfileNavBar/ProfileNavBar';
 import UserInfo from '../../components/UserInfo/UserInfo';
 import UserInfoForm from '../../components/UserInfoForm/UserInfoForm';
@@ -8,6 +9,7 @@ import ShoppingBag from '../../components/ShoppingBag/ShoppingBag';
 
 const Profile = () => {
   const [navBar, setNavBar] = useState('Profile');
+  const dispatch = useDispatch();
   const {
     name,
     image,
@@ -17,9 +19,15 @@ const Profile = () => {
     department,
     _id,
     email,
-    shoppingBag,
     role,
    } = useSelector((state) => state.users.users);
+
+   const { order } = useSelector((state) => state.order);
+
+   useEffect(()=>{
+    dispatch(getOrdersByUser({user: _id}))
+  },[_id])
+
 
   return (
     <div className='profilePage'>
@@ -60,10 +68,20 @@ const Profile = () => {
       {
         navBar === 'ShoppingBag' ? (
           <section>
-            <ShoppingBag
-              products={shoppingBag}
-              key={_id}
-            />
+            <h3 className='profilePage__shoppingBagTitle'>Información de Compras Realizadas</h3>
+            <section className='profilePage__shoppingBag'>
+              {
+                order.map((order) => (
+                  <ShoppingBag
+                    orderNum={order.orderNum}
+                    totalPrice={order.totalPrice}
+                    shoppingBag={order.shoppingBag}
+                    date={order.createdAt}
+                  />
+                ))
+              }
+            </section>
+
           </section>
         ) : null
       }

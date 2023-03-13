@@ -1,6 +1,6 @@
-.shoppingBag__title {
-  margin-bottom: 1em;
-  margin-top: 1em;
+.shoppingBag {
+  padding: 2em 1em 1em 1em;
+  border: 3px solid cadetblue;
 }
 
 .shoppingBag__list {

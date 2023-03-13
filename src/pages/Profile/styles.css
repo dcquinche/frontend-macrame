@@ -17,6 +17,18 @@
   border: 0;
 }
 
+.profilePage__shoppingBagTitle {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.profilePage__shoppingBag {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 2em;
+}
+
 @media (min-width: 1440px) {
   .profilePage {
     margin: 3em 15em 3em 15em;

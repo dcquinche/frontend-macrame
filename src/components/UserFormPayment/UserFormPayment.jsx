@@ -3,9 +3,11 @@ import useForm from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from '../../features/usersSlice';
 import { createOrder } from '../../features/orderSlice';
+import { updateCart } from '../../features/cartsSlice';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import PaymentWompi from '../PaymentWompi/PaymentWompi';
+import ObjectID from 'bson-objectid';
 
 const UserFormPayment = ({email, name, phone, address, city, department, order, totalPrice, id}) => {
   const { form, handleChange } = useForm({});
@@ -22,6 +24,9 @@ const UserFormPayment = ({email, name, phone, address, city, department, order, 
     event.preventDefault();
     try{
       dispatch(updateUser({ ...form, _id: id }));
+      carts.map((cart) => {
+        dispatch(updateCart({ user: ObjectID('000000000000000000000000') , _id: cart._id }))
+      })
       dispatch(createOrder({ email: email, name: name, orderNum: order, totalPrice: totalPrice, shoppingBag: carts, user: id }));
       showToastMessage();
     } catch(error) {

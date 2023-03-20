@@ -20,7 +20,7 @@ const SummaryPayment = ({carts}) => {
       subTotal = subTotal + (cart.product.price * cart.amount);
       setTotal(subTotal);
     });
-  })
+  }, [carts])
 
   useEffect(() => {
     dispatch(captureData({total: total, orderNum: orderNum}));
@@ -41,7 +41,7 @@ const SummaryPayment = ({carts}) => {
       </section>
         {
           carts.map((cart) => (
-            <section className='summary__subtitlesValues'>
+            <section className='summary__subtitlesValues' key={cart.id}>
               <div className='summary__table'>
                 <p className='summary__name'>{cart.product.name}</p>
               </div>

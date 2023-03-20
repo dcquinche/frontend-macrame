@@ -33,7 +33,7 @@ const ProductsAdmin = () => {
   useEffect(() => {
     setResults(!search ? productsSort
       : productsSort.filter((product) => product.name.toLowerCase().includes(search.toLocaleLowerCase())));
-  });
+  }, [search]);
 
   return (
     <div className='productsAdminPage'>

@@ -50,7 +50,6 @@ const ProductCardAdmin = ({name, image, price, description, category, id}) => {
     localStorage.clear();
   }
 
-
   const handleClickSave = async () => {
     try{
       dispatch(updateProduct({ ...form, image: localStorage.getItem('upload') ? localStorage.getItem('upload') : image, _id: id }));
@@ -60,8 +59,6 @@ const ProductCardAdmin = ({name, image, price, description, category, id}) => {
       throw new Error(error);
     }
   }
-
-  console.log(localStorage.getItem('upload'))
 
   return (
     <div className='productAdmin'>

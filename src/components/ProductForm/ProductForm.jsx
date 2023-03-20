@@ -15,9 +15,6 @@ const ProductForm = () => {
   const [urlImg, setUrlImg] = useState(whiteBoard);
   const dispatch = useDispatch();
 
-  console.log('url',urlImg)
-  console.log('board',whiteBoard)
-
   const handleChangeImage = ({target}) => {
     const { files } = target;
     const image = files[0];

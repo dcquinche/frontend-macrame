@@ -8,19 +8,24 @@ import ProductCardAdmin from '../../components/ProductCardAdmin/ProductCardAdmin
 const ProductsAdmin = () => {
   const { products } = useSelector((state) => state.products);
   const [productsSort, setProductsSort] = useState([]);
-  const [results, setResults] = useState(products);
+  const [results, setResults] = useState([]);
   const [search, setSearch] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getAllProducts());
-  }, []);
+  }, [products]);
 
   useEffect(() => {
     const Products = [].concat(products);
     setProductsSort(Products.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()));
   },[products]);
+
+  useEffect(() => {
+    setResults(!search ? productsSort
+      : productsSort.filter((product) => product.name.toLowerCase().includes(search.toLocaleLowerCase())));
+  }, [search, productsSort]);
 
   const handleClickRegister = () => {
     navigate('/registro-productos');
@@ -29,11 +34,6 @@ const ProductsAdmin = () => {
   const handleChange = ({ target }) => {
     setSearch(target.value);
   };
-
-  useEffect(() => {
-    setResults(!search ? productsSort
-      : productsSort.filter((product) => product.name.toLowerCase().includes(search.toLocaleLowerCase())));
-  }, [search]);
 
   return (
     <div className='productsAdminPage'>
